@@ -447,4 +447,4 @@ opisane w [`REUSE.toml`](REUSE.toml). Zgodność możesz sprawdzić narzędziem 
 Zob. [`CITATION.cff`](CITATION.cff) (przycisk **„Cite this repository”** na GitHubie).
 
 > Dworakowski Z., Dziewic S., *study-roadmap: interaktywna mapa zależności przedmiotów*,
-> Katedra Robotyki i Mechatroniki, AGH w Krakowie, 2026. https://github.com/UZUPELNIJ/study-roadmap
+> Katedra Robotyki i Mechatroniki, AGH w Krakowie, 2026. https://github.com/Szymoon/study-roadmap

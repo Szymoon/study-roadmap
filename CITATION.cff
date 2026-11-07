@@ -4,7 +4,7 @@ title: "study-roadmap: interaktywna mapa zależności przedmiotów"
 abstract: "Interaktywna mapa zależności między przedmiotami kierunku studiów, z archetypami zawodowymi. Wersja statyczna (HTML + JSON) oraz wersja z panelem administracyjnym (PHP)."
 type: software
 license: AGPL-3.0-or-later
-repository-code: "https://github.com/UZUPELNIJ/study-roadmap"
+repository-code: "https://github.com/Szymoon/study-roadmap"
 keywords:
   - curriculum map
   - study programme

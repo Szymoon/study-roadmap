@@ -1,7 +1,7 @@
 version = 1
 SPDX-PackageName = "study-roadmap"
 SPDX-PackageSupplier = "Ziemowit Dworakowski, Szymon Dziewic <zdw@agh.edu.pl>"
-SPDX-PackageDownloadLocation = "https://github.com/UZUPELNIJ/study-roadmap"
+SPDX-PackageDownloadLocation = "https://github.com/Szymoon/study-roadmap"
 
 # Dane mapy: przedmioty, zależności, umiejętności, archetypy, opisy (obie wersje)
 [[annotations]]
