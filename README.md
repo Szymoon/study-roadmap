@@ -1,4 +1,4 @@
-# study-roadmap - Mapa Zależności przedmiotów
+# Mapa Zależności przedmiotów - study-roadmap
 
 Interaktywna mapa, która pokazuje studentom, **jak przedmioty na kierunku studiów budują na sobie nawzajem**:
 które umiejętności z wcześniejszych semestrów są potrzebne w kolejnych. Każdy przedmiot to bloczek w kolumnie
