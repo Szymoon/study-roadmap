@@ -1,0 +1,80 @@
+{
+  "nodes": [
+    {
+      "id": "ROOT",
+      "label": "Kierunek\nStudiów",
+      "level": 0,
+      "title": "Przykładowy kierunek studiów inżynierskich - demonstracyjna mapa zależności przedmiotów.",
+      "skills": []
+    },
+    {
+      "id": "PODST1",
+      "label": "Przedmiot\npodstawowy 1",
+      "level": 1,
+      "category": "podstawy",
+      "title": "Przykładowy przedmiot z obszaru podstawowej edukacji technicznej (placeholder).",
+      "syllabus": "#",
+      "skills": [
+        "Przykładowa umiejętność 1 z sylabusa (placeholder).",
+        "Przykładowa umiejętność 2 z sylabusa (placeholder)."
+      ]
+    },
+    {
+      "id": "PODST2",
+      "label": "Przedmiot\npodstawowy 2",
+      "level": 1,
+      "category": "podstawy",
+      "title": "Przykładowy przedmiot z obszaru podstawowej edukacji technicznej (placeholder).",
+      "syllabus": "#",
+      "skills": [
+        "Przykładowa umiejętność 1 z sylabusa (placeholder).",
+        "Przykładowa umiejętność 2 z sylabusa (placeholder)."
+      ]
+    },
+    {
+      "id": "MIEK1",
+      "label": "Przedmiot\nmiękki 1",
+      "level": 1,
+      "category": "miekkie",
+      "title": "Przykładowy przedmiot miękki lub biznesowy (placeholder).",
+      "syllabus": "#",
+      "skills": [
+        "Przykładowa umiejętność 1 z sylabusa (placeholder)."
+      ]
+    },
+    {
+      "id": "OBA1",
+      "label": "Przedmiot\nobieralny 1",
+      "level": 1,
+      "category": "podstawy",
+      "title": "Przykładowy przedmiot obieralny z bloku (placeholder).",
+      "syllabus": "#",
+      "electiveBlock": "Blok obieralny 1",
+      "skills": [
+        "Przykładowa umiejętność 1 z sylabusa (placeholder).",
+        "Przykładowa umiejętność 2 z sylabusa (placeholder)."
+      ]
+    },
+    {
+      "id": "OBA2",
+      "label": "Przedmiot\nobieralny 2",
+      "level": 1,
+      "category": "podstawy",
+      "title": "Przykładowy przedmiot obieralny z bloku (placeholder).",
+      "syllabus": "#",
+      "electiveBlock": "Blok obieralny 1",
+      "skills": [
+        "Przykładowa umiejętność 1 z sylabusa (placeholder).",
+        "Przykładowa umiejętność 2 z sylabusa (placeholder)."
+      ]
+    },
+    {
+      "id": "WF1",
+      "label": "Wychowanie\nFizyczne 1",
+      "level": 1,
+      "category": "jezyki",
+      "title": "Zajęcia z wychowania fizycznego.",
+      "skills": []
+    }
+  ]
+}

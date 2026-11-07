@@ -1,0 +1,18 @@
+{
+  "_comment": "Definicje archetypów zawodowych (menu „Wybierz archetyp zawodowy”). Kolejność kluczy = kolejność w menu. Każdy archetyp ma: label (nazwa w menu), tagline (krótki podtytuł), daily (opis „Na co dzień”), subjects (ID przedmiotów PRZYPISANYCH - pełny kolor; ID muszą istnieć w semX.json) oraz opcjonalnie core (podzbiór subjects - przedmioty KLUCZOWE z niebieską obwódką). Bez pola core kluczowe są wszystkie przypisane poza wspólnymi dla wszystkich archetypów i oznaczonymi w semX.json jako \"foundational\": true. Prerekwizyty przypisanych przedmiotów też są podświetlane, a reszta mapy jest wygaszona. Dane są przykładowe - zastąp je archetypami swojego kierunku. Pełny opis formatu: README.md w katalogu głównym repozytorium.",
+
+  "archetypes": {
+    "programista": {
+      "label": "Programista",
+      "tagline": "Przykładowy archetyp skupiony na oprogramowaniu i pracy z danymi.",
+      "daily": "Przykładowy opis archetypu. Na co dzień projektuje i utrzymuje oprogramowanie, pracuje z danymi oraz integruje systemy cyfrowe. To treść demonstracyjna - w docelowej mapie opisz tu realne zadania wybranej ścieżki zawodowej.",
+      "subjects": ["ROOT", "PODST2", "PODST3", "PODST5", "OBA1", "OBB1", "MIEK3", "PODST7", "PODST8", "PRAK", "PDYP"]
+    },
+    "konstruktor": {
+      "label": "Konstruktor",
+      "tagline": "Przykładowy archetyp skupiony na projektowaniu i konstruowaniu.",
+      "daily": "Przykładowy opis archetypu. Na co dzień projektuje części i zespoły, prowadzi obliczenia oraz przygotowuje dokumentację techniczną. To treść demonstracyjna - w docelowej mapie opisz tu realne zadania wybranej ścieżki zawodowej.",
+      "subjects": ["ROOT", "PODST1", "PODST4", "PODST6", "OBA2", "OBB2", "MIEK4", "PODST7", "PODST8", "PRAK", "PDYP"]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Jeśli korzystasz z tej mapy lub jej danych, prosimy o cytowanie."
+title: "study-roadmap: interaktywna mapa zależności przedmiotów"
+abstract: "Interaktywna mapa zależności między przedmiotami kierunku studiów, z archetypami zawodowymi. Wersja statyczna (HTML + JSON) oraz wersja z panelem administracyjnym (PHP)."
+type: software
+license: AGPL-3.0-or-later
+repository-code: "https://github.com/UZUPELNIJ/study-roadmap"
+keywords:
+  - curriculum map
+  - study programme
+  - prerequisites
+  - vis-network
+authors:
+  - family-names: Dworakowski
+    given-names: Ziemowit
+    email: zdw@agh.edu.pl
+    affiliation: "Katedra Robotyki i Mechatroniki, AGH w Krakowie"
+  - family-names: Dziewic
+    given-names: Szymon
+    email: sdziewic@agh.edu.pl
+    affiliation: "Katedra Robotyki i Mechatroniki, AGH w Krakowie"

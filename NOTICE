@@ -1,0 +1,37 @@
+study-roadmap - interaktywna mapa zależności przedmiotów
+Copyright (C) 2026 Ziemowit Dworakowski, Szymon Dziewic
+Katedra Robotyki i Mechatroniki, AGH w Krakowie
+Kontakt: zdw@agh.edu.pl, sdziewic@agh.edu.pl
+
+Repozytorium zawiera dwie wersje tej samej aplikacji:
+  study_roadmap/        - wersja statyczna (HTML + JSON),
+  study_roadmap_admin/  - wersja z panelem administracyjnym (PHP).
+Poniższe warunki dotyczą obu folderów.
+
+KOD APLIKACJI (pliki .html/.php/.js/.css i pozostałe pliki techniczne)
+  Licencja: GNU Affero General Public License v3.0 lub nowsza
+  (AGPL-3.0-or-later) - pełny tekst: LICENSE.
+
+DANE MAPY (pliki .json: przedmioty, zależności, umiejętności, archetypy, opisy)
+  Licencja: Creative Commons Uznanie autorstwa - Użycie niekomercyjne -
+  Na tych samych warunkach 4.0 Międzynarodowe (CC BY-NC-SA 4.0)
+  - pełny tekst: LICENSES/CC-BY-NC-SA-4.0.txt
+  Wymagane uznanie autorstwa: "Ziemowit Dworakowski, Szymon Dziewic,
+  Katedra Robotyki i Mechatroniki, AGH w Krakowie" + link do licencji.
+
+DODATKOWE WARUNKI WG SEKCJI 7 GNU AGPL v3
+  (b) Każda kopia i wersja pochodna, która udostępnia interfejs
+      użytkownika, musi zachować panel "O projekcie" (lub równoważną,
+      równie widoczną informację) zawierający: nazwiska oryginalnych
+      autorów i jednostkę, nazwy obu licencji oraz link do kodu
+      źródłowego tej wersji. Można dopisać własnych autorów obok.
+  (c) Wersje zmodyfikowane muszą być oznaczone jako zmienione względem
+      oryginału i nie mogą być przedstawiane jako wersja oryginalna.
+  (e) Licencja nie udziela praw do nazwy ani znaków towarowych
+      "AGH" / "Akademia Górniczo-Hutnicza" - nie wolno ich używać
+      w sposób sugerujący, że uczelnia lub autorzy popierają daną wersję.
+
+KOMPONENTY ZEWNĘTRZNE
+  vis-network (ładowany z CDN unpkg.com) - Apache-2.0 / MIT,
+  https://github.com/visjs/vis-network
+  Montserrat (ładowany z Google Fonts) - SIL Open Font License 1.1

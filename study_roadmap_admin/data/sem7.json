@@ -1,0 +1,22 @@
+{
+  "nodes": [
+    {
+      "id": "PDYP",
+      "label": "Projekt\nDyplomowy",
+      "level": 7,
+      "category": "dyplom",
+      "title": "Realizacja inżynierskiego projektu dyplomowego pod opieką promotora.",
+      "syllabus": "#",
+      "skills": []
+    },
+    {
+      "id": "SDYP",
+      "label": "Seminarium\nDyplomowe",
+      "level": 7,
+      "category": "dyplom",
+      "title": "Seminarium przygotowujące do złożenia i obrony pracy dyplomowej.",
+      "syllabus": "#",
+      "skills": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+# === Mapa Zależności: zawsze świeże pliki (bez ręcznego czyszczenia cache) ===
+# Przeglądarka przy każdym wejściu pyta serwer, czy plik się zmienił:
+#  - jeśli NIE  -> szybkie "304 Not Modified" (nic nie pobiera),
+#  - jeśli TAK  -> pobiera nową wersję.
+# Dzięki temu po podmianie plików na serwerze widać zmiany od razu,
+# a strona nadal ładuje się szybko, gdy nic nie ruszałeś.
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(html?|css|js|json)$">
+        Header set Cache-Control "no-cache, must-revalidate"
+    </FilesMatch>
+</IfModule>

@@ -1,0 +1,174 @@
+{
+    "edges": [
+        {
+            "from": "ROOT",
+            "to": "PODST1",
+            "skill": "Przedmiot obowiązkowy w 1. semestrze."
+        },
+        {
+            "from": "ROOT",
+            "to": "PODST2",
+            "skill": "Przedmiot obowiązkowy w 1. semestrze."
+        },
+        {
+            "from": "ROOT",
+            "to": "MIEK1",
+            "skill": "Przedmiot obowiązkowy w 1. semestrze."
+        },
+        {
+            "from": "ROOT",
+            "to": "WF1",
+            "skill": "Przedmiot obowiązkowy w 1. semestrze."
+        },
+        {
+            "from": "ROOT",
+            "to": "OBA1",
+            "skill": "Przedmiot obieralny - blok „Blok obieralny 1” (student wybiera jeden moduł z bloku)."
+        },
+        {
+            "from": "ROOT",
+            "to": "OBA2",
+            "skill": "Przedmiot obieralny - blok „Blok obieralny 1” (student wybiera jeden moduł z bloku)."
+        },
+        {
+            "from": "PODST1",
+            "to": "PODST3",
+            "skill": "Przykładowa zależność wiedzy między przedmiotami (placeholder)."
+        },
+        {
+            "from": "PODST2",
+            "to": "PODST3",
+            "skill": "Przykładowa zależność wiedzy między przedmiotami (placeholder)."
+        },
+        {
+            "from": "MIEK1",
+            "to": "MIEK2",
+            "skill": "Przykładowa zależność wiedzy między przedmiotami (placeholder)."
+        },
+        {
+            "from": "WF1",
+            "to": "WF2",
+            "skill": "Zajęcia z wychowania fizycznego."
+        },
+        {
+            "from": "PODST3",
+            "to": "PODST4",
+            "skill": "Przykładowa zależność wiedzy między przedmiotami (placeholder)."
+        },
+        {
+            "from": "OBA1",
+            "to": "PODST4",
+            "skill": "Przykładowa zależność wiedzy: wiedza z bloku obieralnego 1 jest rozwijana dalej (placeholder)."
+        },
+        {
+            "from": "OBA2",
+            "to": "PODST4",
+            "skill": "Przykładowa zależność wiedzy: wiedza z bloku obieralnego 1 jest rozwijana dalej (placeholder)."
+        },
+        {
+            "from": "MIEK2",
+            "to": "MIEK3",
+            "skill": "Przykładowa zależność wiedzy między przedmiotami (placeholder)."
+        },
+        {
+            "from": "WF2",
+            "to": "WF3",
+            "skill": "Zajęcia z wychowania fizycznego."
+        },
+        {
+            "from": "JO1",
+            "to": "JO2",
+            "skill": "Lektorat języka obcego na poziomie B2."
+        },
+        {
+            "from": "PODST3",
+            "to": "PODST5",
+            "skill": "Przykładowa zależność wiedzy między przedmiotami (placeholder)."
+        },
+        {
+            "from": "PODST4",
+            "to": "PODST5",
+            "skill": "Przykładowa zależność wiedzy między przedmiotami (placeholder)."
+        },
+        {
+            "from": "PODST3",
+            "to": "PODST6",
+            "skill": "Przykładowa zależność wiedzy między przedmiotami (placeholder)."
+        },
+        {
+            "from": "PODST4",
+            "to": "PODST6",
+            "skill": "Przykładowa zależność wiedzy między przedmiotami (placeholder)."
+        },
+        {
+            "from": "JO2",
+            "to": "JO3",
+            "skill": "Lektorat języka obcego na poziomie B2."
+        },
+        {
+            "from": "PODST5",
+            "to": "PODST7",
+            "skill": "Przykładowa zależność wiedzy między przedmiotami (placeholder)."
+        },
+        {
+            "from": "PODST6",
+            "to": "PODST7",
+            "skill": "Przykładowa zależność wiedzy między przedmiotami (placeholder)."
+        },
+        {
+            "from": "PODST4",
+            "to": "OBB1",
+            "skill": "Przykładowa zależność wiedzy: przedmiot podstawowy wprowadza do bloku obieralnego 2 (placeholder)."
+        },
+        {
+            "from": "PODST4",
+            "to": "OBB2",
+            "skill": "Przykładowa zależność wiedzy: przedmiot podstawowy wprowadza do bloku obieralnego 2 (placeholder)."
+        },
+        {
+            "from": "MIEK3",
+            "to": "MIEK4",
+            "skill": "Przykładowa zależność wiedzy między przedmiotami (placeholder)."
+        },
+        {
+            "from": "PODST7",
+            "to": "PODST8",
+            "skill": "Przykładowa zależność wiedzy między przedmiotami (placeholder)."
+        },
+        {
+            "from": "OBB1",
+            "to": "PODST8",
+            "skill": "Przykładowa zależność wiedzy: wiedza z bloku obieralnego 2 jest rozwijana dalej (placeholder)."
+        },
+        {
+            "from": "MIEK4",
+            "to": "MIEK5",
+            "skill": "Przykładowa zależność wiedzy między przedmiotami (placeholder)."
+        },
+        {
+            "from": "PODST7",
+            "to": "PRAK",
+            "skill": "Wiedza z wcześniejszych semestrów jest wykorzystywana podczas praktyki zawodowej (placeholder)."
+        },
+        {
+            "from": "PRAK",
+            "to": "PDYP",
+            "skill": "Praktyka zawodowa dostarcza doświadczenia przydatnego przy realizacji projektu dyplomowego."
+        },
+        {
+            "from": "PODST8",
+            "to": "PDYP",
+            "skill": "Wiedza z przedmiotów kierunkowych jest wykorzystywana w projekcie dyplomowym (placeholder)."
+        },
+        {
+            "from": "MIEK5",
+            "to": "SDYP",
+            "skill": "Kompetencje miękkie wspierają przygotowanie i prezentację pracy dyplomowej (placeholder)."
+        },
+        {
+            "from": "PODST8",
+            "to": "SDYP",
+            "skill": "Wiedza kierunkowa jest podsumowywana w ramach seminarium dyplomowego (placeholder)."
+        }
+    ]
+}

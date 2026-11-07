@@ -1,0 +1,53 @@
+{
+  "nodes": [
+    {
+      "id": "PODST7",
+      "label": "Przedmiot\npodstawowy 7",
+      "level": 5,
+      "category": "podstawy",
+      "title": "Przykładowy przedmiot z obszaru podstawowej edukacji technicznej (placeholder).",
+      "syllabus": "#",
+      "skills": [
+        "Przykładowa umiejętność 1 z sylabusa (placeholder).",
+        "Przykładowa umiejętność 2 z sylabusa (placeholder)."
+      ]
+    },
+    {
+      "id": "OBB1",
+      "label": "Przedmiot\nobieralny 3",
+      "level": 5,
+      "category": "podstawy",
+      "title": "Przykładowy przedmiot obieralny z bloku (placeholder).",
+      "syllabus": "#",
+      "electiveBlock": "Blok obieralny 2",
+      "skills": [
+        "Przykładowa umiejętność 1 z sylabusa (placeholder).",
+        "Przykładowa umiejętność 2 z sylabusa (placeholder)."
+      ]
+    },
+    {
+      "id": "OBB2",
+      "label": "Przedmiot\nobieralny 4",
+      "level": 5,
+      "category": "podstawy",
+      "title": "Przykładowy przedmiot obieralny z bloku (placeholder).",
+      "syllabus": "#",
+      "electiveBlock": "Blok obieralny 2",
+      "skills": [
+        "Przykładowa umiejętność 1 z sylabusa (placeholder).",
+        "Przykładowa umiejętność 2 z sylabusa (placeholder)."
+      ]
+    },
+    {
+      "id": "MIEK4",
+      "label": "Przedmiot\nmiękki 4",
+      "level": 5,
+      "category": "miekkie",
+      "title": "Przykładowy przedmiot miękki lub biznesowy (placeholder).",
+      "syllabus": "#",
+      "skills": [
+        "Przykładowa umiejętność 1 z sylabusa (placeholder)."
+      ]
+    }
+  ]
+}

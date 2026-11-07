@@ -1,0 +1,18 @@
+version = 1
+SPDX-PackageName = "study-roadmap"
+SPDX-PackageSupplier = "Ziemowit Dworakowski, Szymon Dziewic <zdw@agh.edu.pl>"
+SPDX-PackageDownloadLocation = "https://github.com/UZUPELNIJ/study-roadmap"
+
+# Dane mapy: przedmioty, zależności, umiejętności, archetypy, opisy (obie wersje)
+[[annotations]]
+path = ["study_roadmap/*.json", "study_roadmap_admin/data/*.json"]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Ziemowit Dworakowski, Szymon Dziewic"
+SPDX-License-Identifier = "CC-BY-NC-SA-4.0"
+
+# Pliki techniczne i dokumentacja bez nagłówka SPDX
+[[annotations]]
+path = [".gitignore", "**/.htaccess", "README.md", "NOTICE", "CITATION.cff"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Ziemowit Dworakowski, Szymon Dziewic"
+SPDX-License-Identifier = "AGPL-3.0-or-later"

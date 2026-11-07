@@ -1,0 +1,905 @@
+/* SPDX-FileCopyrightText: 2026 Ziemowit Dworakowski, Szymon Dziewic
+   SPDX-License-Identifier: AGPL-3.0-or-later */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background-color: #f8fafc;
+    /* Delikatna, inżynieryjna siatka w tle */
+    background-image:
+        linear-gradient(rgba(30, 41, 59, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30, 41, 59, 0.04) 1px, transparent 1px);
+    background-size: 30px 30px;
+    overflow: hidden;
+}
+
+/* Glassmorphism na panelu bocznym */
+#sidebar {
+    width: 420px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 30px;
+    box-shadow: 10px 0 30px rgba(30, 30, 30, 0.04);
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    overflow-y: auto;          /* dłuższa legenda / lista umiejętności = panel się przewija */
+    overflow-x: hidden;
+}
+
+.brand-header {
+    margin-bottom: 25px;
+    border-bottom: 3px solid #2563EB; /* niebieski akcent */
+    padding-bottom: 15px;
+}
+
+.uni-logo-mock {
+    background-color: #1E293B;
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 1.2rem;
+    padding: 6px 14px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 1.4rem;
+    margin: 0;
+    color: #1E293B;
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Customowy, nowoczesny Dropdown */
+.filter-section {
+    margin-bottom: 26px;
+}
+.select-wrapper {
+    position: relative;
+    margin-top: 10px;
+}
+.select-wrapper::after {
+    content: "▼";
+    font-size: 0.7rem;
+    color: #2563EB;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+select {
+    width: 100%;
+    padding: 14px 15px;
+    appearance: none;
+    background-color: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1E293B;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+select:focus {
+    outline: none;
+    border-color: #2563EB;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+/* Futurystyczny panel detali */
+#details-panel {
+    padding: 25px 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    border-left: 5px solid #2563EB; /* niebieski akcent */
+    min-height: 250px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-title {
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #2563EB;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#network-container {
+    flex-grow: 1;
+    position: relative;
+    height: 100%;
+}
+#mynetwork {
+    width: 100%;
+    height: 100%;
+}
+
+/* Nagłówki Semestrów (Pill Design) */
+#column-headers {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.sem-header {
+    position: absolute;
+    transform: translateX(-50%);
+    transform-origin: center top; /* skalowanie z zoomem względem górnej krawędzi */
+    background-color: #1E293B;
+    color: #FFFFFF;
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    box-shadow: 0 6px 15px rgba(30, 30, 30, 0.15);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    display: none;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Animacja pulsującej kropki dla semestrów */
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #2563EB;
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulseGreen 2s infinite;
+}
+
+/* Animacje UI */
+@keyframes pulseGreen {
+    0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.6); }
+    70% { box-shadow: 0 0 0 8px rgba(37, 99, 235, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+}
+
+.placeholder-anim {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: #64748b;
+    font-weight: 500;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+.pulse-circle {
+    width: 12px;
+    height: 12px;
+    margin-top: 4px;
+    background-color: #2563EB;
+    border-radius: 50%;
+    flex-shrink: 0;
+    animation: pulseRed 2s infinite;
+}
+@keyframes pulseRed {
+    0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.6); }
+    70% { box-shadow: 0 0 0 8px rgba(37, 99, 235, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Legenda ===== */
+.legend {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 22px;
+    padding: 14px 16px;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+.legend-group-title {
+    font-size: 0.68rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #94a3b8;
+    margin: 4px 0 2px;
+}
+.legend-group-title:first-child { margin-top: 0; }
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #475569;
+    line-height: 1.3;
+}
+.legend-item.legend-note {
+    font-weight: 500;
+    color: #64748b;
+    font-size: 0.76rem;
+}
+.legend-swatch {
+    width: 26px;
+    height: 16px;
+    border-radius: 5px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+/* Swatche pokazujące rodzaj przedmiotu (ramka) */
+.swatch-solid  { background: #cbd5e1; border: 2px solid #475569; }
+.swatch-dashed { background: #cbd5e1; border: 2px dashed #1D4ED8; }
+.swatch-block  { background: rgba(29, 78, 216, 0.08); border: 2px dashed #1D4ED8; }
+
+/* ===== Panel detali - eyebrow / nagłówek / opis ===== */
+.detail-eyebrow {
+    font-size: 0.72rem;
+    color: #64748b;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+.detail-heading {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    line-height: 1.25;
+}
+.detail-desc {
+    color: #475569;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 2px 0 16px;
+}
+
+/* Chip kategorii dziedzinowej */
+.cat-chip {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 14px;
+}
+
+/* Podpowiedź pod menu archetypów */
+.filter-hint {
+    margin: 10px 2px 0;
+    font-size: 0.76rem;
+    line-height: 1.45;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* ===== Panel archetypu: klucz priorytetów + przedmioty podstawowe ===== */
+.arch-key {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+.arch-key-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.8rem;
+    color: #475569;
+    line-height: 1.4;
+}
+.arch-key-row strong { color: #1E293B; }
+.arch-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    box-sizing: border-box;
+}
+/* Rdzeń: pełny kolor + obwódka akcentu (jak na mapie) */
+.arch-dot-core    { background: #1C7ED6; border: 3px solid #2563EB; box-shadow: 0 0 0 1px #2563EB; }
+/* Wsparcie: pełny kolor, zwykła ramka dziedziny */
+.arch-dot-support { background: #1C7ED6; border: 2px solid #1256A0; }
+/* Kontekst: wygaszony */
+.arch-dot-context { background: #f1f5f9; border: 2px solid #e2e8f0; }
+
+.arch-section-title {
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #2563EB;
+    margin: 16px 0 6px;
+}
+
+/* Blok obieralny w panelu detali */
+.elective-box {
+    background: rgba(29, 78, 216, 0.06);
+    border: 1.5px dashed #1D4ED8;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+}
+.elective-box-head {
+    color: #1D4ED8;
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.45;
+    margin-bottom: 8px;
+}
+.elective-siblings {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.elective-siblings li {
+    font-size: 0.84rem;
+    color: #475569;
+    padding: 5px 10px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(29, 78, 216, 0.12);
+}
+.elective-siblings li.current {
+    color: #1D4ED8;
+    font-weight: 700;
+    background: rgba(29, 78, 216, 0.12);
+    border-color: rgba(29, 78, 216, 0.35);
+}
+.elective-siblings .tick {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #2563EB;
+    margin-left: 4px;
+    white-space: nowrap;
+}
+
+/* Przycisk sylabusa (PDF) */
+.syllabus-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    background: #1E293B;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 11px 16px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(30, 41, 59, 0.22);
+}
+.syllabus-btn:hover {
+    background: #2563EB;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.28);
+}
+.syllabus-btn:focus-visible {
+    outline: 3px solid #2563EB;
+    outline-offset: 2px;
+}
+
+/* Lista umiejętności w panelu detali */
+.skills-title {
+    color: #1E293B;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.skills-list {
+    margin: 8px 0 0 0;
+    padding-left: 18px;
+    color: #475569;
+    font-size: 0.88rem;
+    line-height: 1.55;
+}
+.skills-list li {
+    margin-bottom: 7px;
+}
+
+/* Panel detali - przewijanie treści (na desktopie przewija się cały #sidebar) */
+.detail-content {
+    padding-right: 6px;
+}
+
+/* ===== Zwijany panel boczny ===== */
+#sidebar {
+    transition: margin-left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* 400px szerokości + 2x30px paddingu + 1px obramowania = 461px */
+#sidebar.collapsed {
+    margin-left: -461px;
+}
+
+#sidebar-toggle {
+    position: fixed;
+    left: 461px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 7px;
+    background-color: #1E293B;
+    color: #ffffff;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 4px 0 12px rgba(30, 30, 30, 0.12);
+    transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 0.2s ease,
+                padding 0.35s ease;
+}
+#sidebar-toggle:hover {
+    background-color: #2563EB;
+}
+#sidebar-toggle:focus-visible {
+    outline: 3px solid #2563EB;
+    outline-offset: 2px;
+}
+
+#sidebar-toggle .chevron {
+    font-size: 0.85rem;
+    line-height: 1;
+    transition: transform 0.35s ease;
+}
+
+/* Pionowy napis - widoczny tylko po schowaniu panelu */
+#sidebar-toggle .toggle-label {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+}
+
+/* Stan schowany: przycisk przy krawędzi, strzałka obrócona, napis widoczny */
+#sidebar-toggle.collapsed {
+    left: 0;
+    padding: 18px 9px;
+}
+#sidebar-toggle.collapsed .chevron {
+    transform: rotate(180deg);
+}
+#sidebar-toggle.collapsed .toggle-label {
+    max-height: 220px;
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #sidebar, #sidebar-toggle,
+    #sidebar-toggle .chevron,
+    #sidebar-toggle .toggle-label {
+        transition: none;
+    }
+}
+
+/* =====================================================================
+   PANEL DETALI - przycisk powrotu do opisu archetypu
+   ===================================================================== */
+/* Powrót z detalu przedmiotu/zależności do opisu archetypu */
+.char-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #2563EB;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0;
+    margin-bottom: 12px;
+}
+.char-back:hover { color: #1D4ED8; }
+.char-back:focus-visible {
+    outline: 2px solid #2563EB;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* ===== Wersja mobilna (telefony i małe tablety) ===== */
+@media (max-width: 768px) {
+
+    /* Panel boczny staje się "szufladą" wysuwaną od dołu */
+    #sidebar {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: auto;
+        width: auto;
+        height: 62vh;
+        margin-left: 0 !important;
+        padding: 18px 20px 20px;
+        border-right: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.6);
+        border-radius: 18px 18px 0 0;
+        box-shadow: 0 -10px 30px rgba(30, 30, 30, 0.15);
+        overflow-y: auto;              /* cała szuflada przewija się jako jeden obszar */
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;  /* scroll nie "ucieka" do tła strony */
+        transform: translateY(0);
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    #sidebar.collapsed {
+        margin-left: 0 !important;
+        transform: translateY(105%);
+    }
+
+    /* Kompaktowy nagłówek i legenda */
+    .brand-header {
+        flex: 0 0 auto;   /* nie kurczy się - szuflada przewija się zamiast ściskać zawartość */
+        margin-bottom: 14px;
+        padding-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    .uni-logo-mock { margin-bottom: 0; font-size: 1rem; padding: 5px 10px; }
+    h1 { font-size: 1.05rem; }
+    .filter-section { flex: 0 0 auto; margin-bottom: 14px; }
+    select { padding: 12px; }
+    .legend {
+        flex: 0 0 auto;   /* nie kurczy się */
+        order: 2;         /* legenda pod szczegółami - po tapnięciu przedmiotu od razu widać jego opis */
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 6px 16px;
+        margin-bottom: 14px;
+        padding: 10px 14px;
+    }
+    .legend-group-title { width: 100%; }
+    #details-panel {
+        flex: 0 0 auto;    /* rośnie z treścią; przewija się cała szuflada */
+        order: 1;          /* nad legendą */
+        padding: 18px 16px;
+        overflow: visible;
+    }
+    .detail-content {
+        overflow: visible; /* przewija się cała szuflada, nie osobno ten box */
+        max-height: none;
+        padding-right: 4px;
+    }
+
+    /* Przycisk jako pozioma pigułka na dole ekranu */
+    #sidebar-toggle {
+        left: 50%;
+        top: auto;
+        bottom: calc(62vh + 12px);
+        transform: translateX(-50%);
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        border-radius: 30px;
+        transition: bottom 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                    background-color 0.2s ease;
+    }
+    #sidebar-toggle.collapsed {
+        left: 50%;
+        bottom: 16px;
+        padding: 10px 20px;
+    }
+
+    /* Strzałka: w dół gdy panel otwarty, w górę gdy schowany */
+    #sidebar-toggle .chevron { transform: rotate(-90deg); }
+    #sidebar-toggle.collapsed .chevron { transform: rotate(90deg); }
+
+    /* Napis poziomy, zawsze widoczny */
+    #sidebar-toggle .toggle-label,
+    #sidebar-toggle.collapsed .toggle-label {
+        writing-mode: horizontal-tb;
+        max-height: none;
+        max-width: none;
+        opacity: 1;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+
+    /* Nagłówki semestrów - mniejsze, wyżej */
+    #column-headers { top: 14px; }
+    .sem-header {
+        padding: 6px 14px;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+        gap: 7px;
+    }
+}
+
+/* =====================================================================
+   PRZYCISK "O PROJEKCIE" + OKNO MODALNE
+   ===================================================================== */
+
+/* Wiersz: bloczek logo uczelni + okrągły przycisk "i" */
+.brand-logo-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+.brand-logo-row .uni-logo-mock {
+    margin-bottom: 0; /* margines przeniesiony na wiersz */
+}
+
+.about-btn {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: #ffffff;
+    color: #2563EB;
+    border: 2px solid #2563EB;
+    border-radius: 50%;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease,
+                transform 0.15s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.15);
+}
+.about-btn:hover {
+    background: #2563EB;
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.28);
+}
+.about-btn:focus-visible {
+    outline: 3px solid #2563EB;
+    outline-offset: 2px;
+}
+
+/* Tło (backdrop) */
+.about-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(30, 30, 30, 0.45);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+.about-overlay.open {
+    display: flex;
+    animation: aboutFade 0.25s ease forwards;
+}
+@keyframes aboutFade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Karta okna */
+.about-dialog {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    max-height: 85vh;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-top: 4px solid #2563EB; /* niebieski akcent */
+    border-radius: 16px;
+    padding: 30px 32px 34px;
+    box-shadow: 0 25px 60px rgba(30, 30, 30, 0.28);
+    animation: aboutRise 0.32s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+@keyframes aboutRise {
+    from { opacity: 0; transform: translateY(16px) scale(0.98); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Przycisk zamknięcia */
+.about-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: transparent;
+    color: #64748b;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+.about-close:hover { background: #f1f5f9; color: #2563EB; }
+.about-close:focus-visible {
+    outline: 2px solid #2563EB;
+    outline-offset: 2px;
+}
+
+/* Nagłówek okna */
+.about-kicker {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #2563EB;
+    margin-bottom: 6px;
+}
+.about-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1E293B;
+    margin: 0 0 22px;
+    text-transform: uppercase;
+}
+
+/* Sekcje */
+.about-section {
+    padding-top: 16px;
+    margin-top: 16px;
+    border-top: 1px solid #eef2f6;
+}
+.about-section:first-of-type {
+    padding-top: 0;
+    margin-top: 0;
+    border-top: none;
+}
+.about-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #94a3b8;
+    margin-bottom: 10px;
+}
+
+/* Afiliacja / tekst */
+.about-text {
+    color: #475569;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Panel "O projekcie" (autorzy, licencje, link do kodu) - wymagany przez AGPL v3
+   (sekcje 5d, 7b, 13 - zob. NOTICE w katalogu głównym repozytorium). Nie usuwać i nie ukrywać (np. display:none). */
+.about-project {
+    margin-top: 22px;
+    padding-top: 10px;
+    border-top: 1px solid #eef2f6;
+    text-align: center;
+}
+.about-project-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 8px;
+    background: none;
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+.about-project-toggle:hover { color: #475569; }
+.about-project-toggle:focus-visible { outline: 2px solid #2563EB; outline-offset: 2px; }
+.about-project-chevron { font-size: 0.65rem; transition: transform 0.25s ease; }
+.about-project-toggle[aria-expanded="true"] .about-project-chevron { transform: rotate(180deg); }
+.about-project-panel {
+    margin-top: 6px;
+    font-size: 0.7rem;
+    line-height: 1.55;
+    color: #94a3b8;
+    animation: about-project-in 0.25s ease;
+}
+.about-project-panel[hidden] { display: none; }
+.about-project-panel p { margin: 0 0 6px; }
+.about-project-panel p:last-child { margin-bottom: 0; }
+.about-project-panel a { color: inherit; text-decoration: underline; }
+.about-project-panel a:hover { color: #2563EB; }
+@keyframes about-project-in {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Wersja mobilna */
+@media (max-width: 768px) {
+    .brand-logo-row { margin-bottom: 0; }
+    .about-dialog { padding: 26px 22px 28px; max-height: 88vh; }
+    .about-title { font-size: 1.2rem; }
+}
+
+/* Panel boczny nie może się kurczyć (tablety) */
+#sidebar {
+    flex-shrink: 0;
+}
+
+/* =====================================================================
+   WERSJA DEWELOPERSKA - dyskretny link do panelu administracyjnego
+   Aby go ukryć: usuń znacznik <a class="admin-login-link"> w index.php.
+   ===================================================================== */
+.admin-login-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    align-self: flex-start;
+    margin-top: 18px;
+    padding: 9px 14px;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #64748b;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+.admin-login-link:hover { color: #2563EB; border-color: #2563EB; background: #fff; }
+@media (max-width: 768px) {
+    .admin-login-link { order: 3; }
+}

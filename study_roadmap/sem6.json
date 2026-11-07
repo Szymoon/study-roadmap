@@ -1,0 +1,36 @@
+{
+  "nodes": [
+    {
+      "id": "PODST8",
+      "label": "Przedmiot\npodstawowy 8",
+      "level": 6,
+      "category": "podstawy",
+      "title": "Przykładowy przedmiot z obszaru podstawowej edukacji technicznej (placeholder).",
+      "syllabus": "#",
+      "skills": [
+        "Przykładowa umiejętność 1 z sylabusa (placeholder).",
+        "Przykładowa umiejętność 2 z sylabusa (placeholder)."
+      ]
+    },
+    {
+      "id": "MIEK5",
+      "label": "Przedmiot\nmiękki 5",
+      "level": 6,
+      "category": "miekkie",
+      "title": "Przykładowy przedmiot miękki lub biznesowy (placeholder).",
+      "syllabus": "#",
+      "skills": [
+        "Przykładowa umiejętność 1 z sylabusa (placeholder)."
+      ]
+    },
+    {
+      "id": "PRAK",
+      "label": "Praktyka\nZawodowa",
+      "level": 6,
+      "category": "dyplom",
+      "title": "Praktyka zawodowa realizowana w przedsiębiorstwie lub jednostce badawczej.",
+      "syllabus": "#",
+      "skills": []
+    }
+  ]
+}

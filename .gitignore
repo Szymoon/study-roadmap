@@ -1,0 +1,14 @@
+# Kopie zapasowe i blokada zapisu panelu admina - powstają na serwerze,
+# nie trafiają do repozytorium (zostaje tylko .htaccess blokujący dostęp).
+study_roadmap_admin/data/backups/*
+!study_roadmap_admin/data/backups/.htaccess
+
+# Pliki tymczasowe zapisu z panelu
+study_roadmap_admin/data/.*.tmp
+
+# System / edytor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

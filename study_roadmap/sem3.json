@@ -1,0 +1,45 @@
+{
+  "nodes": [
+    {
+      "id": "PODST4",
+      "label": "Przedmiot\npodstawowy 4",
+      "level": 3,
+      "category": "podstawy",
+      "title": "Przykładowy przedmiot z obszaru podstawowej edukacji technicznej (placeholder).",
+      "syllabus": "#",
+      "skills": [
+        "Przykładowa umiejętność 1 z sylabusa (placeholder).",
+        "Przykładowa umiejętność 2 z sylabusa (placeholder)."
+      ]
+    },
+    {
+      "id": "MIEK3",
+      "label": "Przedmiot\nmiękki 3",
+      "level": 3,
+      "category": "miekkie",
+      "title": "Przykładowy przedmiot miękki lub biznesowy (placeholder).",
+      "syllabus": "#",
+      "skills": [
+        "Przykładowa umiejętność 1 z sylabusa (placeholder)."
+      ]
+    },
+    {
+      "id": "WF3",
+      "label": "Wychowanie\nFizyczne 3",
+      "level": 3,
+      "category": "jezyki",
+      "title": "Zajęcia z wychowania fizycznego.",
+      "skills": []
+    },
+    {
+      "id": "JO2",
+      "label": "Język Obcy 2\n(Moduł 2)",
+      "level": 3,
+      "category": "jezyki",
+      "title": "Lektorat języka obcego na poziomie B2 (Moduł 2). Do wyboru: angielski, hiszpański, niemiecki, rosyjski, francuski.",
+      "skills": [
+        "Komunikacja w mowie i piśmie na poziomie B2, w tym w kontekście technicznym i akademickim."
+      ]
+    }
+  ]
+}
